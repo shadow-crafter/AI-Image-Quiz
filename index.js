@@ -5,11 +5,12 @@ var isAIGenerated;
 function loadQuestion() {
     questionNum++;
     document.getElementById("question-num").textContent = "Question #" + questionNum;
+    document.getElementById("score").textContent = "Score: " + score;
 
-    isAIGenerated = Boolean(Math.random()); //temporary
+    isAIGenerated = (Math.random() < 0.5); //temporary
 }
 
-function answerQuestion() {
+document.getElementById("confirm-button").onclick = function() {
     var answer;
     if (document.getElementById("yes-button").checked) {
         answer = true;
@@ -20,11 +21,13 @@ function answerQuestion() {
         return;
     }
 
+    console.log("Answer: " + answer, "game answer: " + isAIGenerated);
     if (answer == isAIGenerated) {
         score++;
     } else {
         score--;
     }
+
     loadQuestion();
 }
 
