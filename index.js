@@ -1,5 +1,5 @@
-const aiImagesLen = 0; 
-const realImagesLen = 0;
+const aiImagesLen = 2; 
+const realImagesLen = 2;
 
 let questionNum = 0;
 let score = 0;
@@ -22,7 +22,8 @@ function loadQuestion() {
     
     // Pick a random image from the list
     imageFile = "img" + Math.floor(Math.random() * imgDirLen);
-    document.getElementById("quiz-img").src = imageDir + imageFile + ".jpg";
+    console.log("Image file: " + imageFile + ", len: " + imgDirLen);
+    document.getElementById("quiz-img").src = imageDir + imageFile + ".png";
 }
 
 document.getElementById("confirm-button").onclick = function() {
