@@ -1,5 +1,8 @@
 const aiImagesLen = 2; 
 const realImagesLen = 2;
+const YES_BUTTON = document.getElementById("yes-button");
+const No_BUTTON = document.getElementById("no-button");
+const CONFIRM_BUTTON = document.getElementById("confirm-button");
 
 let questionNum = 0;
 let score = 0;
@@ -26,14 +29,16 @@ function loadQuestion() {
     document.getElementById("quiz-img").src = imageDir + imageFile + ".png";
 }
 
-document.getElementById("confirm-button").onclick = function() {
+CONFIRM_BUTTON.onclick = function() {
     let answer;
-    if (document.getElementById("yes-button").checked) {
+    if (YES_BUTTON.checked) {
         answer = true;
-    } else if (document.getElementById("no-button").checked) {
+        YES_BUTTON.checked = false;
+    } else if (No_BUTTON.checked) {
         answer = false;
+        No_BUTTON.checked = false;
     } else {
-        console.error("No button checked!!");
+        console.log("No button checked!!");
         return;
     }
 
@@ -47,4 +52,6 @@ document.getElementById("confirm-button").onclick = function() {
     loadQuestion();
 }
 
+YES_BUTTON.checked = false; // make sure its unchecked when page loads
+No_BUTTON.checked = false;
 loadQuestion();
