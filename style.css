@@ -3,7 +3,9 @@ body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    font-size: 20px;
 }
+
 .topbar {
     display: flex;
     justify-content: space-between;
@@ -93,7 +95,7 @@ body {
 
 #confirm-button {
     background-color: yellow;
-    font-size: 26px;
+    font-size: 24px;
     margin: 10px;
 }
 
