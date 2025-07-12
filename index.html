@@ -18,11 +18,17 @@
         <img src="" height="500" alt="-Quiz image-" id="quiz-img">
         <p>Is this image AI generated?</p>
         <div>
-            <input type="radio" name="answer" id="yes-button">yes</button>
-            <input type="radio" name="answer" id="no-button">no</button>
+            <label class="inp-button" id="yes-label">
+                <input type="radio" name="answer" id="yes-button">
+                <span>yes</span>
+            </label>
+            <label class="inp-button" id="no-label">
+                <input type="radio" name="answer" id="no-button">
+                <span>no</span>
+            </label>
         </div>
         <br>
-        <button id="confirm-button">CONFIRM</button>
+        <button id="confirm-button" class="inp-button">CONFIRM</button>
     </div>
 
     <script src="index.js"></script>

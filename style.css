@@ -55,3 +55,47 @@ body {
 #question-num {
     font-size: 20px;
 }
+
+.inp-button {
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    padding: 5px 10px;
+    margin: 5px 15px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.inp-button input {
+    display: none;
+}
+
+#yes-label {
+    background-color: lightgreen;
+}
+
+#yes-label:hover {
+    background-color: green;
+}
+
+#no-label {
+    background-color: lightcoral;
+}
+#no-label:hover {
+    background-color: red;
+}
+
+.inp-button input:checked + span {
+    color: white;
+}
+
+#confirm-button {
+    background-color: yellow;
+    font-size: 20px;
+    margin: 10px;
+}
+
+#confirm-button:hover {
+    background-color: gold;
+}
