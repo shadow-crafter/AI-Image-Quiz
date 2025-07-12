@@ -65,6 +65,7 @@ body {
     padding: 5px 10px;
     margin: 5px 15px;
     transition: background-color 0.3s, border-color 0.3s;
+    font-size: 20px;
 }
 
 .inp-button input {
@@ -92,10 +93,15 @@ body {
 
 #confirm-button {
     background-color: yellow;
-    font-size: 20px;
+    font-size: 26px;
     margin: 10px;
 }
 
 #confirm-button:hover {
     background-color: gold;
+}
+
+#quiz-img {
+    border: 2.5px black solid;
+    border-radius: 8px;
 }
