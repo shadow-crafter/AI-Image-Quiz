@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, send_from_directory
+from flask_cors import CORS
 import os
 import random
 
 app = Flask(__name__)
+CORS(app)
 
 ai_images_path = r'L:\datatest\ai-generated-images-vs-real-images\AiArtData\AiArtData' #these are the paths for me. Data from https://www.kaggle.com/datasets/birdy654/cifake-real-and-ai-generated-synthetic-images
 real_images_path = r'L:\datatest\ai-generated-images-vs-real-images\RealArt\RealArt'
