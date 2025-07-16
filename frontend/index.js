@@ -1,8 +1,11 @@
 const aiImagesLen = 2; 
 const realImagesLen = 2;
+
 const YES_BUTTON = document.getElementById("yes-button");
 const No_BUTTON = document.getElementById("no-button");
 const CONFIRM_BUTTON = document.getElementById("confirm-button");
+const CORRECT_AUDIO = new Audio("audio/correct.mp3");
+const INCORRECT_AUDIO = new Audio("audio/incorrect.mp3");
 
 let questionNum = 0;
 let score = 0;
@@ -59,8 +62,12 @@ CONFIRM_BUTTON.onclick = function() {
     console.log("Answer: " + answer, "game answer: " + isAIGenerated);
     if (answer == isAIGenerated) {
         score++;
+        CORRECT_AUDIO.currentTime = 0;
+        CORRECT_AUDIO.play();
     } else {
         score--;
+        INCORRECT_AUDIO.currentTime = 0;
+        INCORRECT_AUDIO.play();
     }
 
     loadQuestion();
