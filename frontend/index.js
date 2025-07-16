@@ -8,10 +8,23 @@ let questionNum = 0;
 let score = 0;
 let isAIGenerated;
 
+async function loadImage() {
+    const RESPONSE = await fetch('http://localhost:5000/imgapi/random-image');
+    console.log("Response: ", RESPONSE);
+    const DATA = await RESPONSE.json();
+    console.log("Data: ", DATA);
+    document.getElementById("quiz-img").src = `http://localhost:5000/imgapi/images/${DATA.image_path}`;
+    isAIGenerated = DATA.label === "AI";
+}
+
 function loadQuestion() {
     questionNum++;
     document.getElementById("question-num").textContent = "Question #" + questionNum;
     document.getElementById("score").textContent = "Score: " + score;
+
+    loadImage();
+
+    /* old code
 
     isAIGenerated = (Math.random() < 0.5); //temporary
     let imageDir, imgDirLen, imageFile;
@@ -27,6 +40,7 @@ function loadQuestion() {
     imageFile = "img" + Math.floor(Math.random() * imgDirLen);
     console.log("Image file: " + imageFile + ", len: " + imgDirLen);
     document.getElementById("quiz-img").src = imageDir + imageFile + ".png";
+    */
 }
 
 CONFIRM_BUTTON.onclick = function() {
