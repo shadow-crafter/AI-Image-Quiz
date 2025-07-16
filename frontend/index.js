@@ -4,8 +4,10 @@ const realImagesLen = 2;
 const YES_BUTTON = document.getElementById("yes-button");
 const No_BUTTON = document.getElementById("no-button");
 const CONFIRM_BUTTON = document.getElementById("confirm-button");
+const TIMER_DISPLAY = document.getElementById("timer");
 const CORRECT_AUDIO = new Audio("audio/correct.mp3");
 const INCORRECT_AUDIO = new Audio("audio/incorrect.mp3");
+const TIMER_LENGTH = 30;
 
 let questionNum = 0;
 let score = 0;
@@ -73,6 +75,22 @@ CONFIRM_BUTTON.onclick = function() {
     loadQuestion();
 }
 
+function startTimer() {
+    let remainingTime = TIMER_LENGTH;
+    TIMER_DISPLAY.textContent = remainingTime;
+
+    timer = setInterval(() => {
+        if (remainingTime <= 0) {
+            clearInterval(timer);
+            TIMER_DISPLAY.textContent = "Time's up!";
+        } else {
+            TIMER_DISPLAY.textContent = remainingTime;
+            remainingTime--;
+        }
+    }, 1000);
+}
+
 YES_BUTTON.checked = false; // make sure its unchecked when page loads
 No_BUTTON.checked = false;
+startTimer();
 loadQuestion();
