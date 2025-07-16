@@ -9,11 +9,11 @@ let score = 0;
 let isAIGenerated;
 
 async function loadImage() {
-    const RESPONSE = await fetch('http://localhost:5000/random-image');
+    const RESPONSE = await fetch('http://localhost:5000/imgapi/random-image');
     console.log("Response: ", RESPONSE);
     const DATA = await RESPONSE.json();
     console.log("Data: ", DATA);
-    document.getElementById("quiz-img").src = `http://localhost:5000/images/${DATA.image_path}`;
+    document.getElementById("quiz-img").src = `http://localhost:5000/imgapi/images/${DATA.image_path}`;
     isAIGenerated = DATA.label === "AI";
 }
 

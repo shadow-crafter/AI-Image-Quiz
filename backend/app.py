@@ -4,7 +4,11 @@ import os
 import random
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={
+    r"/imgapi/*": {
+        "methods": ["GET"]
+    }
+})
 
 ai_images_path = r'L:\datatest\ai-generated-images-vs-real-images\AiArtData\AiArtData' #these are the paths for me. Data from https://www.kaggle.com/datasets/birdy654/cifake-real-and-ai-generated-synthetic-images
 real_images_path = r'L:\datatest\ai-generated-images-vs-real-images\RealArt\RealArt'
@@ -19,12 +23,12 @@ def get_random_image():
         'label': 'AI' if is_ai else 'Real',
     }
 
-@app.route('/random-image', methods=['GET'])
+@app.route('/imgapi/random-image', methods=['GET'])
 def random_image():
     image = get_random_image()
     return jsonify(image)
 
-@app.route('/images/<path:filename>', methods=['GET'])
+@app.route('/imgapi/images/<path:filename>', methods=['GET'])
 def get_image(filename):
     if filename in os.listdir(ai_images_path):
         return send_from_directory(ai_images_path, filename)
