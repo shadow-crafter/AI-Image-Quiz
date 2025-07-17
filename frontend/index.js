@@ -63,11 +63,10 @@ CONFIRM_BUTTON.onclick = function() {
 
     console.log("Answer: " + answer, "game answer: " + isAIGenerated);
     if (answer == isAIGenerated) {
-        score++;
+        score += 10;
         CORRECT_AUDIO.currentTime = 0;
         CORRECT_AUDIO.play();
     } else {
-        score--;
         INCORRECT_AUDIO.currentTime = 0;
         INCORRECT_AUDIO.play();
     }
