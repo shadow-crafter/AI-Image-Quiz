@@ -7,5 +7,5 @@ The data I used is for testing is from [here](https://www.kaggle.com/datasets/bi
 ### To run the website and try out the game:
 
 - Edit the <i>ai_images_path</i> and <i>real_images_path</i> in the <b>app.py</b> backend to the paths of folders with images you would like to use.
-- Run the <b>app.py</b> python script to start the server.
+- Run the <b>app.py</b> python script to start the server. Make sure to install any dependencies.
 - Open the <b>index.html</b> file.

@@ -5,8 +5,8 @@ const YES_BUTTON = document.getElementById("yes-button");
 const No_BUTTON = document.getElementById("no-button");
 const CONFIRM_BUTTON = document.getElementById("confirm-button");
 const TIMER_DISPLAY = document.getElementById("timer");
-const CORRECT_AUDIO = new Audio("audio/correct.mp3");
-const INCORRECT_AUDIO = new Audio("audio/incorrect.mp3");
+const CORRECT_AUDIO = new Audio("../assets/audio/correct.mp3");
+const INCORRECT_AUDIO = new Audio("../assets/audio/incorrect.mp3");
 const TIMER_LENGTH = 30;
 
 let questionNum = 0;
