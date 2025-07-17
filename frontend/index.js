@@ -83,6 +83,7 @@ function startTimer() {
         if (remainingTime <= 0) {
             clearInterval(timer);
             TIMER_DISPLAY.textContent = "Time's up!";
+            window.location.href = "./gameover.html";
         } else {
             TIMER_DISPLAY.textContent = remainingTime;
             remainingTime--;
