@@ -10,7 +10,8 @@ CORS(app, resources={
     }
 })
 
-ai_images_path = r'L:\datatest\ai-generated-images-vs-real-images\AiArtData\AiArtData' #these are the paths for me. Data from https://www.kaggle.com/datasets/birdy654/cifake-real-and-ai-generated-synthetic-images
+#modify these paths to point to your image folders
+ai_images_path = r'L:\datatest\ai-generated-images-vs-real-images\AiArtData\AiArtData'
 real_images_path = r'L:\datatest\ai-generated-images-vs-real-images\RealArt\RealArt'
 
 def get_random_image():
