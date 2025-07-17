@@ -68,6 +68,9 @@ CONFIRM_BUTTON.onclick = function() {
         CORRECT_AUDIO.currentTime = 0;
         CORRECT_AUDIO.play();
     } else {
+        score -= 5;
+        if (score < 0) score = 0;
+        
         INCORRECT_AUDIO.currentTime = 0;
         INCORRECT_AUDIO.play();
     }
