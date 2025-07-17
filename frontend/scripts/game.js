@@ -4,6 +4,7 @@ const realImagesLen = 2;
 const YES_BUTTON = document.getElementById("yes-button");
 const No_BUTTON = document.getElementById("no-button");
 const CONFIRM_BUTTON = document.getElementById("confirm-button");
+const QUIZ_IMAGE = document.getElementById("quiz-img");
 const TIMER_DISPLAY = document.getElementById("timer");
 const CORRECT_AUDIO = new Audio("../assets/audio/correct.mp3");
 const INCORRECT_AUDIO = new Audio("../assets/audio/incorrect.mp3");
@@ -18,7 +19,7 @@ async function loadImage() {
     console.log("Response: ", RESPONSE);
     const DATA = await RESPONSE.json();
     console.log("Data: ", DATA);
-    document.getElementById("quiz-img").src = `http://localhost:5000/imgapi/images/${DATA.image_path}`;
+    QUIZ_IMAGE.src = `http://localhost:5000/imgapi/images/${DATA.image_path}`;
     isAIGenerated = DATA.label === "AI";
 }
 
