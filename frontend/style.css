@@ -26,6 +26,9 @@ body {
     padding: 15px 20px;
 }
 
+#bottom-info {
+    text-align: center;
+}
 #game-title {
     position: absolute;
     left: 50%;
